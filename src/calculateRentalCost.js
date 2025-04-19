@@ -11,7 +11,7 @@ function calculateRentalCost(days) {
   const SHORT_TERM_DISCOUNT = 20;
   const cost = days * 40;
 
-  if (days < 0 || !isNaN(days)) {
+  if (days < 0 || (typeof days === 'number' && isNaN(days))) {
     throw new Error('Invalid number of days');
   }
 
